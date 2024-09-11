@@ -4,33 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magnolia Hyon Portfolio</title>
+    <title>Magnolia Hyon Art Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #93c2ed;
+        }
+        /* Parallax effect */
+        .parallax {
+            background-image: url('graph_paper.jpg'); /* Replace with your background image */
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         header {
-            background-color: #5a8d9d;
-            color: white;
-            padding: 20px 10%;
             text-align: center;
+            padding: 50px 10%;
+            background-color: rgba(90, 141, 157, 0.8);
+            color: white;
         }
         .container {
             padding: 20px 10%;
         }
         h2 {
+            text-align: center;
             color: #5a8d9d;
+            margin-top: 20px;
         }
-        .project, .skill {
-            background-color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery-item {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         footer {
             text-align: center;
@@ -41,46 +67,28 @@
 </head>
 <body>
 
+<div class="parallax"></div>
+
 <header>
-    <h1>Magnolia Hyon Portfolio</h1>
-    <p>Welcome to my personal portfolio. Explore my work and get to know my skills.</p>
+    <h1>Magnolia Hyon Art Portfolio</h1>
+    <p>Explore my world of visual art. Click on the images to dive deeper into my work.</p>
 </header>
 
 <div class="container">
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Magnolia Hyon, an aspiring [Your Profession or Field] with a passion for [Your Interests or Specialties]. I'm excited to share my work and projects with you!</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Brief description of your project. What problem did it solve? What technologies did you use?</p>
+    <section id="gallery">
+        <h2>My Art</h2>
+        <div class="gallery">
+            <a href="traditional.html" class="gallery-item">
+                <img src="crisis-1.jpg" alt="Traditional Media"> <!-- Replace with your image -->
+            </a>
+            <a href="concept.html" class="gallery-item">
+                <img src="concept-thumbnail.jpg" alt="Concept + Character Art"> <!-- Replace with your image -->
+            </a>
+            <a href="graphic.html" class="gallery-item">
+                <img src="graphic-design.jpg" alt="Graphic Design"> <!-- Replace with your image -->
+            </a>
+            <!-- Add more gallery items as needed -->
         </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Brief description of your project. What problem did it solve? What technologies did you use?</p>
-        </div>
-        <!-- Add more projects as needed -->
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill">
-            <h3>Skill 1</h3>
-            <p>Details about your skill or experience.</p>
-        </div>
-        <div class="skill">
-            <h3>Skill 2</h3>
-            <p>Details about your skill or experience.</p>
-        </div>
-        <!-- Add more skills as needed -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you’d like to get in touch, please email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
     </section>
 </div>
 
