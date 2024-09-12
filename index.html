@@ -9,11 +9,12 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             color: #93c2ed;
             height: 100%;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
+
         /* Parallax effect */
         .parallax {
             background-image: url('images/graph_paper.jpg'); /* Replace with your background image */
@@ -22,34 +23,35 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            position: relative;
+            position: relative; /* Ensure it positions the overlay correctly */
         }
+
+        /* Transparent and sticky header */
         header {
-           
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1000; /* Ensure the header stays on top of other elements */
+            z-index: 1000;
             text-align: left;
             padding: 20px 10%;
-            background: rgba(90, 141, 157, 0.7);
+            background-color: rgba(90, 141, 157, 0.7); /* Transparent header */
             color: white;
-            backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the header */
-            }
-            
-            /* Centering container for the gallery grid */
+            backdrop-filter: blur(5px);
+        }
+
+        /* Main content container */
         .container {
-            position: sticky; /* Avoid using absolute positioning unless necessary */
+            position: absolute; /* Overlay directly on top of the parallax */
+            top: 0; /* Align at the top of the page */
+            left: 0;
             width: 100%;
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: flex-start; /* Start from the top */
-            padding-top: 200px; /* Adjust based on header size */
-            margin-bottom: 50px; /* please don't stick */
-            z-index: 1;
-            background: transparent; /* Ensure transparency */
-            }
+            justify-content: center; /* Center the gallery horizontally */
+            padding-top: 100px; /* Adjust to match header height */
+            z-index: 1; /* Make sure it sits above the parallax background */
+        }
 
+        /* Grid layout for the gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
@@ -57,11 +59,11 @@
             width: 80%; /* Adjust width as needed */
             max-width: 1200px; /* Limit max width for larger screens */
             padding: 20px; /* Add padding for better spacing */
-            background: transparent; /* Ensure background is fully transparent */
-            }
-            
+            background: transparent; /* Make background fully transparent */
+        }
+
+        /* Gallery items */
         .gallery-item {
-            position: relative; /* Ensure positioning context for hover text */
             width: 100%;
             height: 200px;
             overflow: hidden;
@@ -71,61 +73,27 @@
             transition: transform 0.3s;
             background: transparent; /* Ensure no background on items */
         }
-        
+
         .gallery-item:hover {
             transform: scale(1.05);
-        }
-
-        .hover-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 10px;
-            background: rgba(0.2, 0.2, 0.2, 0.2); /* Semi-transparent background */
-            color: white;
-            text-align: center;
-            opacity: 0; /* Initially hidden */
-            transition: opacity 0.3s, transform 0.3s; /* Smooth transition */
-            font-size: 16px; /* Adjust size as needed */
-            border-radius: 8px;
-        }
-        
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-30px); /* Start above the item */
-            }
-            50% {
-                opacity: 1;
-                transform: translateY(10px); /* Drop below the final position */
-            }
-            70% {
-                transform: translateY(-5px); /* Bounce slightly above */
-            }
-            100% {
-                transform: translateY(0); /* Settle in place */
-            }
-        }
-
-        .gallery-item:hover .hover-text {
-            opacity: 1; /* Show text on hover */
-            animation: bounceIn 0.6s ease-out; /* Control the duration and easing */
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-            background: transparent;
+            display: block; /* Remove extra space below images */
+            background: transparent; /* Ensure no background on images */
         }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 10px;
             background-color: #ddd;
             z-index: 1; /* Ensure footer stays on top */
         }
+
     </style>
 </head>
 <body>
