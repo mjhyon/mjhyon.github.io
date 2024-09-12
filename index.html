@@ -34,7 +34,7 @@
             z-index: 1000;
             text-align: left;
             padding: 20px 10%;
-            background-color: rgba(90, 141, 157, 0.7); /* Transparent header */
+            background-color: rgba(90, 141, 157, 0.2); /* Transparent header */
             color: white;
             backdrop-filter: blur(5px);
         }
@@ -78,6 +78,43 @@
             transform: scale(1.05);
         }
 
+        .hover-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0.2, 0.2, 0.2, 0.2); /* Semi-transparent background */
+            color: white;
+            text-align: center;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s, transform 0.3s; /* Smooth transition */
+            font-size: 16px; /* Adjust size as needed */
+            border-radius: 8px;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px); /* Start above the item */
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(10px); /* Drop below the final position */
+            }
+            70% {
+                transform: translateY(-5px); /* Bounce slightly above */
+            }
+            100% {
+                transform: translateY(0); /* Settle in place */
+            }
+        }
+
+        .gallery-item:hover .hover-text {
+            opacity: 1; /* Show text on hover */
+            animation: bounceIn 0.6s ease-out; /* Control the duration and easing */
+        }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -111,6 +148,7 @@
         <div class="gallery">
             <a href="traditional.html" class="gallery-item">
                 <img src="images/crisis-1.jpeg" alt="Traditional Media"> <!-- Replace with your image -->
+                <div class="hover-text">Traditional Media</div> <!-- Text to display on hover -->
                 <div class="hover-text">Traditional Media</div> <!-- Text to display on hover -->
             </a>
             <a href="concept.html" class="gallery-item">
