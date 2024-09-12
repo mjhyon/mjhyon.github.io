@@ -12,6 +12,7 @@
             font-family: Arial, sans-serif;
             color: #93c2ed;
             height: 100%;
+            overflow-x: hidden;
         }
         /* Parallax effect */
         .parallax {
@@ -21,6 +22,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            position: relative;
         }
         header {
            
@@ -28,7 +30,7 @@
             top: 0;
             width: 100%;
             z-index: 1000; /* Ensure the header stays on top of other elements */
-            text-align: right;
+            text-align: left;
             padding: 20px 10%;
             background-color: rgba(90, 141, 157, 0.7); /* Make it transparent */
             color: white;
@@ -37,11 +39,15 @@
             
             /* Centering container for the gallery grid */
         .container {
-            display: flex; /* Position flex to overlay on the parallax */
+            position: absolute; /* Position flex to overlay on the parallax */
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            min-height: 100vh;
-            padding-top: 80px;
+            padding-top: 100px;
+            z-index: 1;
             }
 
         .gallery {
@@ -51,6 +57,7 @@
             width: 80%; /* Adjust width as needed */
             max-width: 1200px; /* Limit max width for larger screens */
             padding: 20px; /* Add padding for better spacing */
+            background: transparent; /* Make background fully transparent */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
             }
@@ -76,6 +83,7 @@
             text-align: center;
             padding: 10px;
             background-color: #ddd;
+            z-index: 1; /* Ensure footer stays on top */
         }
     </style>
 </head>
