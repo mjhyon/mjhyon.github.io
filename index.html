@@ -46,7 +46,7 @@
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            padding-top: 100px;
+            padding-top: 150px;
             z-index: 1;
             }
 
@@ -56,7 +56,7 @@
             gap: 20px;
             width: 80%; /* Adjust width as needed */
             max-width: 1200px; /* Limit max width for larger screens */
-            padding: 20px; /* Add padding for better spacing */
+            padding: 40px; /* Add padding for better spacing */
             background: transparent; /* Make background fully transparent */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
             }
@@ -73,10 +73,30 @@
         .gallery-item:hover {
             transform: scale(1.05);
         }
+
+        .gallery-item .hover-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background*/
+            color: white;
+            text-align: center;
+            opacity: 0; /* Initially hidden */
+            font-size: 16px; /* Adjust size as needed */
+        }
+        
+        .gallery-item:hover .hover-text {
+            opacity: 1; /* Show text on hover */
+        }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+            background: transparent;
         }
         footer {
             text-align: center;
