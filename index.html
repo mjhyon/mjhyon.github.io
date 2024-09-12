@@ -6,86 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnolia Hyon Art Portfolio</title>
     <style>
-       body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #93c2ed;
-    height: 100%;
-}
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #93c2ed;
+            height: 100%;
+        }
+        /* Parallax effect */
+        .parallax {
+            background-image: url('images/graph_paper.jpg'); /* Replace with your background image */
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        header {
+           
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure the header stays on top of other elements */
+            text-align: left;
+            padding: 20px 10%;
+            background-color: rgba(90, 141, 157, 0.7); /* Make it transparent */
+            color: white;
+            backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the header */
+            }
+            
+            /* Centering container for the gallery grid */
+        .container {
+            display: flex; /* Position flex to overlay on the parallax */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh;
+            padding-top: 80px;
+            }
 
-/* Parallax effect */
-.parallax {
-    background-image: url('images/graph_paper.jpg'); /* Replace with your background image */
-    height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Transparent and sticky header */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    text-align: left;
-    padding: 20px 10%;
-    background-color: rgba(90, 141, 157, 0.7); /* Transparent header */
-    color: white;
-    backdrop-filter: blur(5px);
-}
-
-/* Main content container */
-.container {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    min-height: 100vh; /* Ensure the content fills the viewport height */
-    padding-top: 80px; /* Add space for the fixed header */
-}
-
-/* Grid layout for the gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    width: 80%; /* Adjust width as needed */
-    max-width: 1200px; /* Limit max width for larger screens */
-    padding: 20px; /* Add padding for better spacing */
-    background: rgba(255, 255, 255, 0.8); /* Optional: background to distinguish from parallax */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
-}
-
-/* Gallery items */
-.gallery-item {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #ddd;
-}
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            width: 80%; /* Adjust width as needed */
+            max-width: 1200px; /* Limit max width for larger screens */
+            padding: 20px; /* Add padding for better spacing */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+            }
+            
+        .gallery-item {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ddd;
+        }
     </style>
 </head>
 <body>
