@@ -9,9 +9,10 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Josefin Sans', sans-serif;
+            font-family: Helvetica, sans-serif;
             color: #93c2ed;
-            background-color: #f9f9f9;
+            height: 100%;
+            overflow-x: hidden;
         }
         /* Parallax effect */
         .parallax {
@@ -28,60 +29,47 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000; /* Ensure the header stays on top of other elements */
+            text-align: left;
             padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            background: rgba(90, 141, 157, 0.7);
+            color: white;
+            backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the header */
             }
-
-            header img {
-            height: 50px;
-        }
             
-            .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #0073e6;
-        }
-
             /* Centering container for the gallery grid */
-        /* Gallery Section */
-        .gallery-container {
-            padding-top: 100px; /* Space for fixed header */
+        .container {
+            position: sticky; /* Avoid using absolute positioning unless necessary */
+            width: 100%;
             display: flex;
-            justify-content: center;
-            margin-top: 100px; /* Adjust to align with header */
-        }
+            justify-content: center; /* Center horizontally */
+            align-items: flex-start; /* Start from the top */
+            padding-top: 200px; /* Adjust based on header size */
+            margin-bottom: 50px; /* please don't stick */
+            z-index: 1;
+            background: transparent; /* Ensure transparency */
+            }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
             gap: 20px;
-            width: 80%;
-            max-width: 1200px;
-        }
-
+            width: 80%; /* Adjust width as needed */
+            max-width: 1200px; /* Limit max width for larger screens */
+            padding: 20px; /* Add padding for better spacing */
+            background: transparent; /* Ensure background is fully transparent */
+            }
+            
         .gallery-item {
-            position: relative;
+            position: relative; /* Ensure positioning context for hover text */
+            width: 100%;
+            height: 200px;
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             transition: transform 0.3s;
+            background: transparent; /* Ensure no background on items */
         }
         
         .gallery-item:hover {
