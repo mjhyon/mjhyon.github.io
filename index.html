@@ -23,18 +23,23 @@
         }
         header {
            
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000; /* Ensure the header stays on top of other elements */
             text-align: left;
             padding: 20px 10%;
-            background-color: rgba(90, 141, 157, 0.9);
+            background-color: rgba(90, 141, 157, 0.7); /* Make it transparent */
             color: white;
+            backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the header */
             }
 
         .container {
-            padding: 20px 10%;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+            height: calc(100vh - 60px); /* Adjust height minus header's height */
+            padding: 20px;
         }
         h2 {
             text-align: center;
